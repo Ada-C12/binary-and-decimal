@@ -16,5 +16,25 @@ def binary_to_decimal(binary_array)
   
   return decimal_total
   
-  # raise NotImplementedError
+end
+
+def decimal_to_binary(decimal_number)
+  binary_array = []
+  binary_value = 128
+  new_value = decimal_number
+  
+  8.times do |i|
+    if new_value >= binary_value
+      binary_array << 1
+      new_value -= binary_value
+      binary_value /= 2
+    else
+      binary_array << 0
+      binary_value /= 2
+    end
+    
+  end
+  
+  return binary_array
+  
 end

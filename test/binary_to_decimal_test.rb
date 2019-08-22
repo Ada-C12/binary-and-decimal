@@ -32,3 +32,27 @@ describe "binary to decimal" do
   end
 end
 
+# Hallie's Tests
+
+describe "decimal to binary" do
+  it "From 153 to 10011001" do
+    expected_binary_array = [1, 0, 0, 1, 1, 0, 0, 1]
+    decimal = 153
+    
+    decimal_to_binary(decimal).must_equal expected_binary_array
+  end
+  
+  it "From 13 to 00001101" do
+    expected_binary_array = [0, 0, 0, 0, 1, 1, 0, 1]
+    decimal = 13
+    
+    decimal_to_binary(decimal).must_equal expected_binary_array
+  end
+  
+  it "From 128 to 10000000" do
+    expected_binary_array = [1, 0, 0, 0, 0, 0, 0, 0]
+    decimal = 128
+    
+    decimal_to_binary(decimal).must_equal expected_binary_array
+  end
+end
