@@ -20,23 +20,31 @@ def binary_to_decimal(binary_array)
   return decimal
 end
 
-def find_num_places(num)
+# Determines the length of a binary array given a decimal number.
+def find_length_of_binary(num)
   cur_exponent = 0
+  
+  # while the current power of 2 is not large enough to be greater than or equal to the decimal
   while 2**cur_exponent <= num
+    # increase the exponent by 1
     cur_exponent += 1
   end
+  
   return cur_exponent
 end
 
+# Returns an array representing the binary form of a decimal number. 
 def decimal_to_binary(num)
-  length_binary = find_num_places(num)
+  length_binary = find_length_of_binary(num)
   binary_array = []
-  # binary_array = Array.new(most_sig_place)
   
   length_binary.times do |i|
+    # If the current power of 2 can be subtracted from the input, 
+    # add a 1 to the binary array
     if num - 2**(length_binary-i-1) >= 0
       binary_array << 1
       num -= 2**(length_binary-i-1)
+      # Otherwise put a 0. 
     else
       binary_array << 0
     end
@@ -44,13 +52,3 @@ def decimal_to_binary(num)
   
   return binary_array
 end
-
-# p find_num_places(4) #3
-# p find_num_places(7) #3
-# p find_num_places(17) #5
-
-p decimal_to_binary(5)
-p decimal_to_binary(7)
-p decimal_to_binary(12)
-p decimal_to_binary(16)
-p decimal_to_binary(17)
