@@ -5,5 +5,12 @@
 # Calculate  and return the decimal value for this binary number using
 # the algorithm you devised in class.
 def binary_to_decimal(binary_array)
-  raise NotImplementedError
+  exponent = 8
+  total = 0
+  binary_array.each do |bit|
+    total += bit * 2**exponent
+    exponent -= 1
+  end
+
+  return total / 2
 end
