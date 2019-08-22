@@ -5,5 +5,14 @@
 # Calculate  and return the decimal value for this binary number using
 # the algorithm you devised in class.
 def binary_to_decimal(binary_array)
+  decimal = 0
+  exponent = 7
+  
+  binary_array.each do |digit|
+    decimal += (digit * (2**exponent)) 
+    exponent -= 1
+  end
+  return decimal
   raise NotImplementedError
 end
+
