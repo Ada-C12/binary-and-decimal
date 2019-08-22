@@ -23,19 +23,4 @@ describe "binary to decimal" do
     
     decimal_to_binary(decimal_num).must_equal expected_binary_array
   end
-  
-  it "From -2 to -10" do
-    decimal_num = -2
-    expected_binary_array = [-1, -0]
-    
-    decimal_to_binary(decimal_num).must_equal expected_binary_array
-  end
-  
-  # COME BACK
-  it "Does something with fractional decimal numbers" do
-    # decimal_num = -2
-    # expected_binary_array = [-1, -0]
-    
-    # decimal_to_binary(decimal_num).must_equal expected_binary_array
-  end
 end
