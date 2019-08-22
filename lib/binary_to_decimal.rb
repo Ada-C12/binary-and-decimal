@@ -6,9 +6,10 @@
 # the algorithm you devised in class.
 def binary_to_decimal(binary_array)
   val = 0
+  len = binary_array.count
   
   binary_array.each_with_index do |bit, index|
-    pow = binary_array.count.pred - index
+    pow = len.pred - index
     val += 2 ** pow * bit 
   end
   
