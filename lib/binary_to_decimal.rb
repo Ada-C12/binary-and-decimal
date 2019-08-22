@@ -13,3 +13,21 @@ def binary_to_decimal(binary_array)
   return dec_num
   
 end
+
+def decimal_to_binary(dec_num)
+  return nil if dec_num.nil?
+  binary_array = []
+  digits = Math::log(dec_num, 2).to_i 
+  (digits + 1).times do |i|
+    num = 2 ** (digits - i) 
+    digit = (dec_num - num >= 0)? 1 : 0
+    binary_array << digit 
+    dec_num -= num * digit
+  end
+  return binary_array
+
+
+end
+
+
+decimal_to_binary(5)
