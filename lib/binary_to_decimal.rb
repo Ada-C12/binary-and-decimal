@@ -4,6 +4,9 @@
 # The least significant bit is at index 7.
 # Calculate  and return the decimal value for this binary number using
 # the algorithm you devised in class.
+
+require 'pry'
+
 def binary_to_decimal(binary_array)
   if binary_array.class != Array
     raise ArgumentError, 'Input is not an array.'
