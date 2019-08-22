@@ -40,4 +40,12 @@ describe "binary to decimal" do
     
   end
   
+  # it "will not accept an array of an invalid length" do
+  it "verifies the length of the array" do
+    invalid_array = [0,1,1,0]
+    expect {
+      binary_to_decimal(invalid_array)
+    }.must_raise ArgumentError
+  end
+  
 end
