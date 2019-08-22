@@ -5,5 +5,22 @@
 # Calculate  and return the decimal value for this binary number using
 # the algorithm you devised in class.
 def binary_to_decimal(binary_array)
-  raise NotImplementedError
+  n = binary_array.length - 1
+  m = 0
+  r = 0
+
+  if binary_array.class != Array
+    # Not really sure if we need to implement this expection
+    # Or what situation this exception applies...
+    # Assuming and implementing as input validation
+    raise NotImplementedError
+  else
+    until n < 0 
+      r += binary_array[n] * (2 ** m)
+      n -= 1
+      m += 1
+    end 
+  end
+  
+  return r
 end
