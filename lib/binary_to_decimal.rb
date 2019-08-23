@@ -19,9 +19,3 @@ def binary_to_decimal(binary_array)
   
   return total
 end
-
-
-
-
-
-# Add a decimal_to_binary method which converts a decimal number received as a parameter into an array of binary digits. Then write 3 tests for the method.
