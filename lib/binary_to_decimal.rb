@@ -8,14 +8,16 @@
 def binary_to_decimal(binary_array)
   raise ArgumentError.new "nil binary inputed" if binary_array == nil
   
+  # filter through array multiplying the num by 2 ^ exponent - exponent starts at length of array (8) and decreases with each iteration of the loop
   values = []
-  arraylength = binary_array.length
+  exponent = binary_array.length
   binary_array.each do |bit|
-    arraylength -= 1
-    value = bit * (2 ** arraylength)
+    exponent -= 1
+    value = bit * (2 ** exponent)
     values << value
   end
   
+  # not allowed to use .sum - iterate through array to calculate sum
   sum = 0
   values.each do |value|
     sum += value
@@ -26,31 +28,30 @@ end
 
     
 def reverse(array)
-  reversed = []
+  result = []
   until array.empty? do
-      reversed << array.pop
+    result << array.pop
   end
-  return reversed
+
+  return result
 end
 
 
 def decimal_to_binary(decimal)
   raise ArgumentError.new "nil binary inputed" if decimal == nil
 
-    remainders = []
-    value = decimal
-    until value == 0
-      remainder = value % 2
-      remainders << remainder
-      value = (value / 2).to_i
-    end
+  remainders = []
+  value = decimal
+  until value == 0
+    remainder = value % 2
+    remainders << remainder
+    value = (value / 2).to_i
+  end
     
-    result = []
-    until remainders.empty? do
-        result << remainders.pop
-    end
+# call reverse method above to reverse stored remainders array to get binary number in correct order
+  result = reverse(remainders)
 
-    return result
+  return result
 end
 
 
