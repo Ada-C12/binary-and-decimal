@@ -1,9 +1,30 @@
-# A method named `binary_to_decimal` that receives as input an array of size 8.
-# The array is randomly filled with 0’s and 1’s.
-# The most significant bit is at index 0.
-# The least significant bit is at index 7.
-# Calculate  and return the decimal value for this binary number using
-# the algorithm you devised in class.
 def binary_to_decimal(binary_array)
-  raise NotImplementedError
+  total = 0
+  index = binary_array.length - 1
+  power_of_two = 0
+  binary_array.each do |digit|
+    total += binary_array[index] * 2 ** (power_of_two)
+    index -= 1
+    power_of_two += 1
+  end
+  return total
+end
+
+def decimal_to_binary(int)
+  int = int.to_i
+  def get_exp (int)
+    exp = 0
+    until (2 ** exp * 2) > int
+      exp += 1
+    end
+    return exp
+  end
+
+  answer = 0
+  until int == 0
+    exp = get_exp(int)
+    int -= (2 ** exp)
+    answer += 1 * (10 ** exp)
+  end
+  return answer
 end
