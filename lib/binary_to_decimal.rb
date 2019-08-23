@@ -12,7 +12,6 @@ end
 
 
 def get_exp(int)
-  int.to_i
   exp = 0
   until (2 ** exp * 2) > int
     exp += 1
@@ -20,7 +19,7 @@ def get_exp(int)
   return exp
 end
 
-def decimal_to_binary(int)
+def decimal_to_binary_int(int)
   answer = 0
   until int == 0
     exp = get_exp(int)
@@ -28,4 +27,19 @@ def decimal_to_binary(int)
     answer += 1 * (10 ** exp)
   end
   return answer
+end
+
+def decimal_to_binary_array(int)
+  answer_array = []
+  exp = get_exp(int)
+  until exp < 0
+    if int - 2 ** exp >= 0
+      int -= (2 ** exp)
+      answer_array << 1
+    else
+      answer_array << 0
+    end
+  exp -= 1
+  end
+  return answer_array
 end
