@@ -42,12 +42,9 @@ def decimal_to_binary(num)
   binary_array = []
   
   length_binary.times do |i|
-    # If the current power of 2 can be subtracted from the input, 
-    # add a 1 to the binary array
     if num - 2**(length_binary-i-1) >= 0
       binary_array << 1
       num -= 2**(length_binary-i-1)
-      # Otherwise put a 0. 
     else
       binary_array << 0
     end
