@@ -42,7 +42,7 @@ describe "decimal to binary" do
     decimal_to_binary(decimal).must_equal expected_binary_array
   end
   
-  it "From 13 to 00001101" do
+  it "From 13 to 1101" do
     decimal = 13
     expected_binary_array = [1, 1, 0, 1]
     
