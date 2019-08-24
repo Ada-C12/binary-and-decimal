@@ -17,9 +17,8 @@ def decimal_to_binary(decimal_number)
   result = []
   num = decimal_number
   until num == 0
-    remainder = num % 2
+    result << num % 2
     num /= 2
-    result << remainder
   end
   return result.reverse
 end
