@@ -4,6 +4,19 @@
 # The least significant bit is at index 7.
 # Calculate  and return the decimal value for this binary number using
 # the algorithm you devised in class.
+
 def binary_to_decimal(binary_array)
-  raise NotImplementedError
+  total = 0
+  power = 0
+  index = -1
+  
+  while power < binary_array.length
+    number = binary_array[index] * (2 ** power)
+    total += number
+    
+    index -= 1
+    power += 1
+  end
+  
+  return total
 end
