@@ -16,16 +16,16 @@ def decimal_to_binary(decimal_number)
     return [0]
   end
   
-  temp_output = Array.new
+  result_in_reverse_order = Array.new
   while decimal_number != 0
-    temp_output << (decimal_number % 2)
+    result_in_reverse_order << (decimal_number % 2)
     decimal_number = decimal_number / 2
   end
-  # copy element in temp_output to result in reverse order
-  size = temp_output.length
+  # copy element in result_in_reverse_order to result in reverse order
+  size = result_in_reverse_order.length
   result = Array.new(size)
   size.times do |index|
-    result[size - 1 - index] = temp_output[index]
+    result[size - 1 - index] = result_in_reverse_order[index]
   end
   return result
 end
