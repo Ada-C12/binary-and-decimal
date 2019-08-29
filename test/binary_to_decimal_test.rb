@@ -1,6 +1,6 @@
-require 'minitest/autorun'
-require 'minitest/reporters'
-require_relative '../lib/binary_to_decimal'
+require "minitest/autorun"
+require "minitest/reporters"
+require_relative "../lib/binary_to_decimal"
 
 describe "binary to decimal" do
   it "From 10011001 to 153" do
@@ -29,5 +29,22 @@ describe "binary to decimal" do
     expected_decimal = binary_array.join.to_s.to_i(2)
 
     binary_to_decimal(binary_array).must_equal expected_decimal
+  end
+end
+describe "decimal to binary" do
+  it "Converts from 23 to 10111" do
+    decimal_number = 23
+    expected_bin_array = [1, 0, 1, 1, 1]
+    decimal_to_binary(decimal_number).must_equal expected_bin_array
+  end
+  it "Converts from 108 to 1101100" do
+    decimal_number = 108
+    expected_bin_array = [1, 1, 0, 1, 1, 0, 0]
+    decimal_to_binary(decimal_number).must_equal expected_bin_array
+  end
+  it "Converts from 1116 to 10001011100" do
+    decimal_number = 1116
+    expected_bin_array = [1, 0, 0, 0, 1, 0, 1, 1, 1, 0, 0]
+    decimal_to_binary(decimal_number).must_equal expected_bin_array
   end
 end
