@@ -4,6 +4,22 @@
 # The least significant bit is at index 7.
 # Calculate  and return the decimal value for this binary number using
 # the algorithm you devised in class.
-def binary_to_decimal(binary_array)
-  raise NotImplementedError
+
+# every digit in this binary array list is a bit 
+def binary_to_decimal(binary_array) # binary_array = [1, 0, 0, 1, 1, 0, 0, 1] 153
+
+  exp = binary_array.length - 1 
+  result = 0
+  #8 - 1 = 7
+  binary_array.each do |num|
+    dec = num * (2**exp) # 0
+    result += dec #128 + 0
+    # puts dec #0
+    exp -= 1 # 6
+    # puts num
+  end
+  return result
 end
+  
+# list = [1,1,0,1,1,0,0,1]
+# binary_to_decimal(list)
