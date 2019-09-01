@@ -2,6 +2,8 @@ require 'minitest/autorun'
 require 'minitest/reporters'
 require_relative '../lib/binary_to_decimal'
 
+Minitest::Reporters.use!
+
 describe "binary to decimal" do
   it "From 10011001 to 153" do
     binary_array = [1, 0, 0, 1, 1, 0, 0, 1]
