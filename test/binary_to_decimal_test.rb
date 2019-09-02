@@ -1,6 +1,7 @@
 require 'minitest/autorun'
 require 'minitest/reporters'
 require_relative '../lib/binary_to_decimal'
+require 'minitest/pride'
 
 describe "binary to decimal" do
   it "From 10011001 to 153" do
@@ -29,5 +30,13 @@ describe "binary to decimal" do
     expected_decimal = binary_array.join.to_s.to_i(2)
     
     binary_to_decimal(binary_array).must_equal expected_decimal
+  end
+end
+
+
+describe "decimal to binary" do
+  it "Converts a decimal to its corresponding binary number" do
+    num = 13
+    expect(decimal_to_binary(num)).must_equal [1, 1, 0, 1]
   end
 end

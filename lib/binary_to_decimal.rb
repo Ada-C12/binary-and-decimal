@@ -16,3 +16,25 @@ def binary_to_decimal(binary_array)
   raise NotImplementedError
 end
 
+
+def decimal_to_binary(num)
+  binary_number = (num % 2).to_s
+  num = num / 2 
+  
+  until num == 0
+    modulo = (num % 2).to_s
+    num = num / 2 
+    binary_number = modulo+binary_number
+  end
+  
+  binary_array = binary_number.split(//)
+  binary_array.map! {|num| num = num.to_i}
+  return binary_array
+  #psuedocode notes:
+  # take the number mod 2, remainder goes in the array[0] position
+end
+# Add a `decimal_to_binary` method which converts a decimal number 
+# received as a parameter into an array of binary digits.  
+# Then write 3 tests for the method.
+
+
