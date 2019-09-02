@@ -44,4 +44,9 @@ describe "decimal to binary" do
     number = 0
     expect(decimal_to_binary(number)).must_equal [0]
   end
+  
+  it "Hanldes negative values and converts to binary" do
+    number = -15
+    expect(decimal_to_binary(number)).must_equal [1, 0, 1, 1, 1, 1]
+  end
 end
