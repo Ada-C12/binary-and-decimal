@@ -39,4 +39,9 @@ describe "decimal to binary" do
     number = 13
     expect(decimal_to_binary(number)).must_equal [1, 1, 0, 1]
   end
+  
+  it "Converts 0 to its corresponding binary number" do
+    number = 0
+    expect(decimal_to_binary(number)).must_equal [0]
+  end
 end
