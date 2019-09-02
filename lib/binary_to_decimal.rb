@@ -12,10 +12,6 @@ end
 
 
 def decimal_to_binary(num)
-  if num < 0
-    binary_number = "1"
-  end
-  num = num.abs
   
   binary_number = (num % 2).to_s
   num /= 2

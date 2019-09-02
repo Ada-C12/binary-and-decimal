@@ -45,8 +45,8 @@ describe "decimal to binary" do
     expect(decimal_to_binary(number)).must_equal [0]
   end
   
-  it "Hanldes negative values and converts to binary" do
-    number = -15
-    expect(decimal_to_binary(number)).must_equal [1, 0, 1, 1, 1, 1]
+  it "Handles a large number" do
+    number = 1_000
+    expect(decimal_to_binary(number)).must_equal [1, 1, 1, 1, 1, 0, 1, 0, 0, 0]
   end
 end
