@@ -17,5 +17,3 @@ def binary_to_decimal(binary_array)
   return num
 end
 
-this_array = [1, 1, 1, 0, 0, 0, 1, 1]
-binary_to_decimal(this_array)
