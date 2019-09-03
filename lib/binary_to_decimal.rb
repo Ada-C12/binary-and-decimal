@@ -11,7 +11,7 @@ def binary_to_decimal(binary_array)
   num = 0
     
   binary_array.each do |i|
-    num += (i * 2**exponent)
+    num += (i * 2 ** exponent)
     exponent -= 1
   end
   return num
